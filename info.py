@@ -71,6 +71,7 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'RolexMoviesOXO')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
+AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
@@ -96,9 +97,6 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 
      # Auto Delete For Group Message (Self Delete) #
 SELF_DELETE_SECONDS = int(environ.get('SELF_DELETE_SECONDS', 10800))
-SELF_DELETE = environ.get('SELF_DELETE', True)
-if SELF_DELETE == "True":
-    SELF_DELETE = True
 DOWNLOAD_TEXT_NAME = "How to download "
 DOWNLOAD_TEXT_URL = "https://t.me/tnlinkdown/6"
 CAPTION_BUTTON = "Support"
