@@ -1,6 +1,7 @@
+#Code By @JonSnow11
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, SHORTLINK_URL, SHORTLINK_API, LOG_CHANNEL
+from info import *
 from imdb import Cinemagoer 
 import asyncio
 from pyrogram.types import Message, InlineKeyboardButton
@@ -83,7 +84,7 @@ async def get_poster(query, bulk=False, id=False, file=None):
                 filtered = movieid
         else:
             filtered = movieid
-        movieid=list(filter(lambda k: k.get('kind') in ['movie', 'tv series'], filtered))
+        movieid=list(filter(lambda k: k.get('kind') in ['movie', 'rolex movies'], filtered))
         if not movieid:
             movieid = filtered
         if bulk:
