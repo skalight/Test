@@ -164,9 +164,9 @@ Owner Will Update The Movie Within 24Hour"""
 🔆 <b>Rᴇǫᴜᴇsᴛ</b> : 🎗️`{}`🎗️ """
 
     CAPTION = """
-🎗<b>[{file_name}](https://t.me/RolexMoviesOX)</b>🎗 \n\n🔆 <i><b>Main Channel » [Rolex Movies](https://t.me/RolexMoviesOX)</i></b> \n🔆 <b><i>Main Group » [Movie Group](https://t.me/+ZPpcbtCV204yYWU1)</b></i>"""
+ɴᴀᴍᴇ : <code>{file_name}</code> \n\nɴᴏᴛᴇ: ᴀꜰᴛᴇʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴛʜᴇ ꜰɪʟᴇꜱ, ꜱᴀᴠᴇ ᴛʜᴇ ꜰɪʟᴇ ᴛᴏ ɢᴀʟʟᴇʀʏ ᴀɴᴅ ᴄʟɪᴄᴋ ᴛʜᴇ ᴅᴇʟᴇᴛᴇ ʙᴜᴛᴛᴏɴ, ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ʙᴇꜰᴏʀᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴛʜᴇ ꜰɪʟᴇꜱ, ɪꜰ ᴜ ᴅᴏɴ'ᴛ ᴡᴀɴᴛ ᴛʜɪꜱ ꜰɪʟᴇ ᴘʟᴇᴀꜱᴇ ᴄʟɪᴄᴋ ᴅᴇʟᴇᴛᴇ ʙᴜᴛᴛᴏɴ"""
 
-    IMDB_TEMPLATE_TXT = """<b><i>💫 Title : <a href={url}>{title}</a>  ({year}) 🎭 Genres : {genres} 🌟 IMDB Rating: <a href={url}/ratings>{rating}</a> / 10   📌 [How To Download](https://t.me/RolexMoviesOX/55) </i></b>"""
+    IMDB_TEMPLATE_TXT = """<i>IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 </i>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
