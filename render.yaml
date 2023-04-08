@@ -12,6 +12,10 @@ services:
     numInstances: 1 # optional (defaults to 1)
     healthCheckPath: /
     envVars:
+      - key: DATABASE_URI
+        value: mongodb+srv://think:think@cluster015.9oqeden.mongodb.net/?retryWrites=true&w=majority
       - key: BOT_TOKEN
-        generateValue: true
+        value: 5452246619:AAFNDeo7112BsPm9600Z1NI57RCh-PYvltI
+      - key: DATABASE_NAME
+        value: test
 #End of yaml
