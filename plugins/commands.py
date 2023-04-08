@@ -8,7 +8,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, MOVIE_GRP, MAIN_CHNL, MARVEL_CHNL, DC_CHNL, SERIES_GRP, REQST_CHANNEL, SUPPORT_CHAT_ID, MAX_B_TN, VERIFY
+from info import *
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp, verify_user, check_token, check_verification, get_token
 from database.connections_mdb import active_connection
 import re
@@ -21,18 +21,14 @@ BATCH_FILES = {}
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        buttons = [[
-                    InlineKeyboardButton('⚚ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('⚡Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url=MOVIE_GRP),
-                    InlineKeyboardButton('Sᴇʀɪᴇs Gʀᴏᴜᴘ⚡', url=SERIES_GRP)
-                ],[
-                    InlineKeyboardButton('〄 DC', url=DC_CHNL),
-                    InlineKeyboardButton('⍟ MCU', url=MARVEL_CHNL),
-                    InlineKeyboardButton('Vɪᴘ Sᴇᴀʀᴄʜ ☌', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('♦️ Oᴜʀ Aʟʟ Cʜᴀɴɴᴇʟs ♦️', url='https://t.me/TVSeriesCW/2103')
-                  ]]
+        buttons = [
+            [
+                InlineKeyboardButton('⚡ 𝖴pdates ⚡', url=CHNL_LNK)
+            ],
+            [
+                InlineKeyboardButton('⚡ Developer ⚡', url=f"https://t.me/JonSnow11"),
+            ]
+            ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
@@ -46,17 +42,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('⚡MOVIΞS GᏒOUᎮ', url=MOVIE_GRP),
-                    InlineKeyboardButton('SΞᏒIΞS GᏒOUᎮ⚡', url=SERIES_GRP)
-                ],[
-                    InlineKeyboardButton('〄 DC', url=DC_CHNL),
-                    InlineKeyboardButton('⍟ MCU', url=MARVEL_CHNL),
-                    InlineKeyboardButton('VIᎮ SΞΛᏒCH ☌', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥', url=MAIN_CHNL)
-                  ]]
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ], [
+            InlineKeyboardButton('🔻 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴄʀᴇᴀᴛᴇ ᴏɴᴇ ʟɪᴋᴇ ᴛʜɪs 🔻', callback_data='source')
+        ], [
+            InlineKeyboardButton('ᴅᴇᴠᴇʟᴏᴘᴇʀ 😎', url='https://t.me/JonSnow11'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ 😊', callback_data='about')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -74,7 +66,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "♦️ Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-Uᴘ Cʜᴀɴɴᴇʟ ♦️", url=invite_link.invite_link
+                    "🔻 Join Updates Channel 🔻", url=invite_link.invite_link
                 )
             ]
         ]
@@ -83,29 +75,25 @@ async def start(client, message):
             try:
                 kk, file_id = message.command[1].split("_", 1)
                 pre = 'checksubp' if kk == 'filep' else 'checksub' 
-                btn.append([InlineKeyboardButton("‼️ Wʜʏ Aᴍ I Jᴏɪɴɪɴɢ ‼️", url=f"https://t.me/MrperfectOffcial/422")])
+                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", callback_data=f"{pre}#{file_id}")])
             except (IndexError, ValueError):
-                btn.append([InlineKeyboardButton("‼️ Wʜʏ Aᴍ I Jᴏɪɴɪɴɢ ‼️", url=f"https://t.me/MrperfectOffcial/422")])
+                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Pʟᴇᴀsᴇ Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-Uᴘ Cʜᴀɴɴᴇʟ 🎗 \nTʜᴇɴ Gᴏ Bᴀᴄᴋ Tᴏ Gʀᴏᴜᴘ Aɴᴅ Rᴇǫᴜᴇsᴛ AGᴀɪɴ\nYᴏᴜ'ʟʟ Gᴇᴛ Yᴏᴜʀ Fɪʟᴇ 🔆**",
+            text="**Please Join Our Update Channel🎗 \n Then Tap On Try Again ⚡ \n You'll Get Your File 🔆**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
-                    InlineKeyboardButton('⚡MOVIΞS GᏒOUᎮ', url=MOVIE_GRP),
-                    InlineKeyboardButton('SΞᏒIΞS GᏒOUᎮ⚡', url=SERIES_GRP)
-                ],[
-                    InlineKeyboardButton('〄 DC', url=DC_CHNL),
-                    InlineKeyboardButton('⍟ MCU', url=MARVEL_CHNL),
-                    InlineKeyboardButton('VIᎮ SΞΛᏒCH ☌', switch_inline_query_current_chat='')
-                ],[
-                    InlineKeyboardButton('🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥', url=MAIN_CHNL)
-                  ]]
+            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ], [
+            InlineKeyboardButton('🔻 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴄʀᴇᴀᴛᴇ ᴏɴᴇ ʟɪᴋᴇ ᴛʜɪs 🔻', callback_data='source')
+        ], [
+            InlineKeyboardButton('ᴅᴇᴠᴇʟᴏᴘᴇʀ 😎', url='https://t.me/JonSnow11'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ 😊', callback_data='about')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -121,7 +109,7 @@ async def start(client, message):
         file_id = data
         pre = ""
     if data.split("-", 1)[0] == "BATCH":
-        sts = await message.reply("<b>Please wait...</b>")
+        sts = await message.reply("<b>𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙵𝙸𝙻𝙴𝚂...</b>")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
@@ -155,10 +143,10 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton('⚡MOVIΞS GᏒOUᎮ', url=MOVIE_GRP),
-                          InlineKeyboardButton('SΞᏒIΞS GᏒOUᎮ⚡', url=SERIES_GRP)
+                          InlineKeyboardButton('⚡Main Group', url=f'https://t.me/+ZPpcbtCV204yYWU1'),
+                          InlineKeyboardButton('Main Channel⚡', url=f'https://t.me/RolexMoviesOXO')
                        ],[
-                          InlineKeyboardButton('🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥', url=MAIN_CHNL)
+                          InlineKeyboardButton('🔥 Join Updates Channel 🔥', url=CHNL_LNK)
                          ]
                         ]
                     )
@@ -174,10 +162,10 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton('⚡MOVIΞS GᏒOUᎮ', url=MOVIE_GRP),
-                          InlineKeyboardButton('SΞᏒIΞS GᏒOUᎮ⚡', url=SERIES_GRP)
+                          InlineKeyboardButton('⚡Main Group', url=f'https://t.me/+ZPpcbtCV204yYWU1'),
+                          InlineKeyboardButton('Main Channel⚡', url=f'https://t.me/RolexMoviesOXO')
                        ],[
-                          InlineKeyboardButton('🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥', url=MAIN_CHNL)
+                          InlineKeyboardButton('🔥 Join Updates Channel 🔥', url=CHNL_LNK)
                          ]
                         ]
                     )
@@ -246,7 +234,7 @@ async def start(client, message):
             await message.reply_text(
 
 
-                text=f"<b>🎗️ Hᴇʏ {message.from_user.mention}, Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ 🎗️\nNᴏᴡ Yᴏᴜ Hᴀᴠᴇ Uɴʟɪᴍɪᴛᴇᴅ Vɪᴘ Aᴄᴄᴇss Oғ Nᴀᴛᴀʟɪʏᴀ 🔆</b>",
+                text=f"<b>🎗️ Hᴇʏ {message.from_user.mention}, Yᴏᴜ Aʀᴇ Sᴜᴄᴄᴇssғᴜʟʟʏ Vᴇʀɪғɪᴇᴅ 🎗️\nNᴏᴡ Yᴏᴜ Hᴀᴠᴇ Uɴʟɪᴍɪᴛᴇᴅ Vɪᴘ Aᴄᴄᴇss Oғ sᴛᴇᴠᴇ 🔆</b>",
                 protect_content=True
             )
             await verify_user(client, userid, token)
@@ -264,9 +252,9 @@ async def start(client, message):
                 btn = [[
                     InlineKeyboardButton("♦️ Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ Vᴇʀɪғʏ ♦️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                 ],[
-                    InlineKeyboardButton('‼️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ‼️', url=f'https://t.me/MrperfectOffcial/418')
+                    InlineKeyboardButton('‼️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ‼️', url=f'https://t.me/tnlinkdown/6')
                 ],[
-                    InlineKeyboardButton('🔆 Vɪᴘ Mᴇᴍʙᴇʀsʜɪᴘ 🔆', url=f'https://t.me/MrperfectOffcial/39')
+                    InlineKeyboardButton('🔆 Vɪᴘ Mᴇᴍʙᴇʀsʜɪᴘ 🔆', url=f'https://t.me/tnlinkdown/6')
                       ]]
                 await message.reply_text(
                     text="<b>🔆 Yᴏᴜ Aʀᴇ Nᴏᴛ Vᴇʀɪғɪᴇᴅ 🤦🏻‍♂️\n🔆 Kɪɴᴅʟʏ Vᴇʀɪғʏ Tᴏ Gᴇᴛ Vɪᴘ Aᴄᴄᴇss</b>",
@@ -280,15 +268,15 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                     [
-                      InlineKeyboardButton('⚡MOVIΞS GᏒOUᎮ', url=MOVIE_GRP),
-                      InlineKeyboardButton('SΞᏒIΞS GᏒOUᎮ⚡', url=SERIES_GRP)
-                   ],[
-                      InlineKeyboardButton('🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥', url=MAIN_CHNL)
-                     ]
-                    ]
+                         [
+                          InlineKeyboardButton('⚡Main Group', url=f'https://t.me/+ZPpcbtCV204yYWU1'),
+                          InlineKeyboardButton('Main Channel⚡', url=f'https://t.me/RolexMoviesOXO')
+                       ],[
+                          InlineKeyboardButton('🔥 Join Updates Channel 🔥', url=CHNL_LNK)
+                         ]
+                        ]
+                    )
                 )
-            )
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = file.file_name
@@ -319,16 +307,16 @@ async def start(client, message):
     if not await check_verification(client, message.from_user.id) and VERIFY == True:
         btn = [[
             InlineKeyboardButton("♦️ Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ Vᴇʀɪғʏ ♦️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
-        ],[
-            InlineKeyboardButton('‼️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ‼️', url=f'https://t.me/MrperfectOffcial/418')
-        ],[
-            InlineKeyboardButton('🔆 Vɪᴘ Mᴇᴍʙᴇʀsʜɪᴘ 🔆', url=f'https://t.me/MrperfectOffcial/39')
-              ]]
-        await message.reply_text(
-            text="<b>🔆 Yᴏᴜ Aʀᴇ Nᴏᴛ Vᴇʀɪғɪᴇᴅ 🤦🏻‍♂️\n🔆 Kɪɴᴅʟʏ Vᴇʀɪғʏ Tᴏ Gᴇᴛ Vɪᴘ Aᴄᴄᴇss</b>",
-            protect_content=True,
-            reply_markup=InlineKeyboardMarkup(btn)
-        )
+                ],[
+                    InlineKeyboardButton('‼️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ‼️', url=f'https://t.me/tnlinkdown/6')
+                ],[
+                    InlineKeyboardButton('🔆 Vɪᴘ Mᴇᴍʙᴇʀsʜɪᴘ 🔆', url=f'https://t.me/tnlinkdown/6')
+                      ]]
+                await message.reply_text(
+                    text="<b>🔆 Yᴏᴜ Aʀᴇ Nᴏᴛ Vᴇʀɪғɪᴇᴅ 🤦🏻‍♂️\n🔆 Kɪɴᴅʟʏ Vᴇʀɪғʏ Tᴏ Gᴇᴛ Vɪᴘ Aᴄᴄᴇss</b>",
+                    protect_content=True,
+                    reply_markup=InlineKeyboardMarkup(btn)
+                )
         return
     await client.send_cached_media(
         chat_id=message.from_user.id,
@@ -336,16 +324,16 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
-            [
-             [
-              InlineKeyboardButton('⚡MOVIΞS GᏒOUᎮ', url=MOVIE_GRP),
-              InlineKeyboardButton('SΞᏒIΞS GᏒOUᎮ⚡', url=SERIES_GRP)
-           ],[
-              InlineKeyboardButton('🔥 JOIИ UᎮDΛTΞS CHΛИИΞL 🔥', url=MAIN_CHNL)
-             ]
-            ]
-        )
-    )
+                        [
+                         [
+                          InlineKeyboardButton('⚡Main Group', url=f'https://t.me/+ZPpcbtCV204yYWU1'),
+                          InlineKeyboardButton('Main Channel⚡', url=f'https://t.me/RolexMoviesOXO')
+                       ],[
+                          InlineKeyboardButton('🔥 Join Updates Channel 🔥', url=CHNL_LNK)
+                         ]
+                        ]
+                    )
+                )
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
