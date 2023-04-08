@@ -3,6 +3,7 @@ services:
     name: rolex
     env: Python 3
     repo: https://github.com/skalight/Test
+    plan: free
     region: oregon # optional (defaults to oregon)
     branch: rolex # optional (defaults to master)
     buildCommand: "pip install -r requirements.txt"
