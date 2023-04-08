@@ -1,16 +1,18 @@
 services:
-  # A Docker web service
-  - type: web
-    name: webdis
-    env: docker
+ - type: web
+    name: rolex
+    env: Python 3
+    repo: https://github.com/skalight/Test
+    region: oregon # optional (defaults to oregon)
+    branch: rolex # optional (defaults to master)
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3bot.py"
     envVars:
-      - key: REDIS_HOST
-        fromService:
-          type: redis
-          name: lightning
-          property: host # available properties are listed below
-      - key: REDIS_PORT
-        fromService:
-          type: redis
-          name: lightning
-          property: port
+      - key: DATABASE_URI
+        fromDatabase:
+          name: rolex
+          property: connectionString
+      - key: BOT_TOKEN
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: 'spree@example.com'
