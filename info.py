@@ -93,7 +93,5 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 
      # Auto Delete For Group Message (Self Delete) #
 SELF_DELETE_SECONDS = int(environ.get('SELF_DELETE_SECONDS', 10800))
-DOWNLOAD_TEXT_NAME = "How to download "
 DOWNLOAD_TEXT_URL = "https://t.me/tnlinkdown/6"
-CAPTION_BUTTON = "Support"
 CAPTION_BUTTON_URL = "https://t.me/RolexMoviesOXO"
