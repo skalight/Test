@@ -249,18 +249,18 @@ async def start(client, message):
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
             if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                btn = [[
-                    InlineKeyboardButton("♦️ Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ Vᴇʀɪғʏ ♦️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
-                ],[
-                    InlineKeyboardButton('‼️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ‼️', url=f'https://t.me/tnlinkdown/6')
-                ],[
-                    InlineKeyboardButton('🔆 Vɪᴘ Mᴇᴍʙᴇʀsʜɪᴘ 🔆', url=f'https://t.me/tnlinkdown/6')
-                      ]]
-                await message.reply_text(
-                    text="<b>🔆 Yᴏᴜ Aʀᴇ Nᴏᴛ Vᴇʀɪғɪᴇᴅ 🤦🏻‍♂️\n🔆 Kɪɴᴅʟʏ Vᴇʀɪғʏ Tᴏ Gᴇᴛ Vɪᴘ Aᴄᴄᴇss</b>",
-                    protect_content=True,
-                    reply_markup=InlineKeyboardMarkup(btn)
-                )
+        btn = [[
+            InlineKeyboardButton("♦️ Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ Vᴇʀɪғʏ ♦️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+        ],[
+            InlineKeyboardButton('‼️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ‼️', url=f'https://t.me/MrperfectOffcial/418')
+        ],[
+            InlineKeyboardButton('🔆 Vɪᴘ Mᴇᴍʙᴇʀsʜɪᴘ 🔆', url=f'https://t.me/MrperfectOffcial/39')
+              ]]
+        await message.reply_text(
+            text="<b>🔆 Yᴏᴜ Aʀᴇ Nᴏᴛ Vᴇʀɪғɪᴇᴅ 🤦🏻‍♂️\n🔆 Kɪɴᴅʟʏ Vᴇʀɪғʏ Tᴏ Gᴇᴛ Vɪᴘ Aᴄᴄᴇss</b>",
+            protect_content=True,
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
                 return
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
