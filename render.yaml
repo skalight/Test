@@ -1,19 +1,15 @@
 services:
- - type: web
-    name: rolex
-    env: Python 3
-    repo: https://github.com/skalight/Test
-    plan: free
+  # A Docker web service
+  - type: web
+    name: Test
+    env: python
+    startCommand: python3 bot.py
+    buildCommand: pip3 install -U -r requirements.txt
+    repo: https://github.com/skalight/Test.git 
     region: oregon # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
     branch: rolex # optional (defaults to master)
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python3bot.py"
-    envVars:
-      - key: DATABASE_URI
-        fromDatabase:
-          name: rolex
-          property: connectionString
-      - key: BOT_TOKEN
-        generateValue: true
-      - key: ADMIN_EMAIL
-        value: 'spree@example.com'
+    numInstances: 1 # optional (defaults to 1)
+    healthCheckPath: /
+
+#End of yaml
