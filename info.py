@@ -48,7 +48,6 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'rxmov_files')
 
 # Others
 
-VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnlink.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'b6aace46d40c605fff8e0cafbcd8fbe416851f4d')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
