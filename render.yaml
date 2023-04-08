@@ -14,8 +14,4 @@ services:
     envVars:
       - key: SECRET_KEY_BASE
         generateValue: true
-      - key: ADMIN_EMAIL
-        value: 'spree@example.com'
-      - key: ADMIN_PASSWORD
-        value: 'spree123'
 #End of yaml
