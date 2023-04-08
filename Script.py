@@ -1,22 +1,20 @@
 class script(object):
-    START_TXT = "<b>🧤Hᴇʟʟᴏ {}, I'ᴍ <a href=https://telegram.me/{}>{}</a> &amp; I Cᴀɴ Pʀᴏᴠɪᴅᴇ Yᴏᴜ Aɴʏ Mᴏᴠɪᴇs &amp; Sᴇʀɪᴇs</b> 😇"
+    START_TXT = """<b> Hᴇʟʟᴏ {}</b> 😁
+    
+ɪ ᴀᴍ ᴀ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ + ᴍᴏᴠɪᴇ sᴇᴀʀᴄʜ + ᴍᴀɴᴜᴀʟ ꜰɪʟᴛᴇʀ ʙᴏᴛ. ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴍᴏᴠɪᴇs ɪɴ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs. ʏᴏᴜ ᴄᴀɴ sᴇᴀʀᴄʜ ᴍᴏᴠɪᴇs ᴠɪᴀ ɪɴʟɪɴᴇ. ɪ ᴄᴀɴ ᴀʟsᴏ ᴀᴅᴅ ꜰɪʟᴛᴇʀs ɪɴ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs. ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴇɴᴊᴏʏ😌"""
+    HELP_TXT = """𝙷𝙴𝚈 {}
+𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
 
-    HELP_TXT = """<b>Hᴇʏ {}
-Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
+    ABOUT_TXT = """<b><i>👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/JonSnow11><b>ᴊᴏɴ sɴᴏᴡ</b></a>\n
+📝 ʟᴀɴɢᴜᴀɢᴇ : <a href=https://www.python.org><b>ᴘʏᴛʜᴏɴ</b></a>\n
+📚 ꜰʀᴀᴍᴇᴡᴏʀᴋ : <a href=https://github.com/pyrogram/pyrogram><b>ᴘʏʀᴏɢʀᴀᴍ</b></a>\n
+📡 ʜᴏsᴛᴇᴅ ᴏɴ : <a href=heroku.com><b>ʜᴇʀᴏᴋᴜ</b></a>\n
+👥 sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/RolexMoviesOX><b>ʀᴏʟᴇx ᴄᴏᴍᴍᴜɴɪᴛʏ</b></a>\n
+"""
 
-    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ: {}
-✯ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/MrperfectOffcial_bot'>Ɱɾ. φҽɾƒҽçէ</a>
-✯ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
-✯ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
-✯ DᴀᴛᴀBᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
-✯ Bᴏᴛ Sᴇʀᴠᴇʀ: <a href='https://t.me/MrperfectOffcial'>Heroku</a>
-✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: v2.0.3 [ Sᴛᴀʙʟᴇ ]</b>"""
-
-    SOURCE_TXT = """<b>ɴᴏᴛᴇ:
-- Tʜɪs Bᴏᴛ Is Aɴ Pʀɪᴠᴀᴛᴇ Pʀᴏᴊᴇᴄᴛ
-- Sᴏᴜʀᴄᴇ - <a href="https://t.me/MrperfectOffcial_bot">Cʟɪᴄᴋ Hᴇʀᴇ</a>
-Dᴇᴠᴇʟᴏᴘᴇʀ:
-- <a href="https://t.me/MrperfectOffcial_bot">Ɱɾ. φҽɾƒҽçէ</a></b>"""
+    SOURCE_TXT = """<b>ᴄʀᴇᴀᴛᴇ ᴏɴᴇ ʟɪᴋᴇ ᴛʜɪs :
+    
+» ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ @JonSnow11</b>"""
 
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
 - ꜰɪʟᴛᴇʀ ɪꜱ ᴀ ꜰᴇᴀᴛᴜʀᴇ ᴡᴇʀᴇ ᴜꜱᴇʀꜱ ᴄᴀɴ ꜱᴇᴛ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ʀᴇᴘʟɪᴇꜱ ꜰᴏʀ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴋᴇʏᴡᴏʀᴅ ᴀɴᴅ ɪ ᴡɪʟʟ ʀᴇꜱᴘᴏɴᴅ ᴡʜᴇɴᴇᴠᴇʀ ᴀ ᴋᴇʏᴡᴏʀᴅ ɪꜱ ꜰᴏᴜɴᴅ ɪɴ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ
@@ -108,42 +106,42 @@ Aᴅᴅᴇᴅ Bʏ - {}"""
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
 
-    ALRT_TXT = """🔆 Hᴇʏ {}, Iᴛ's Nᴏᴛ Fᴏʀ Yᴏᴜ❗"""
+    ALRT_TXT = """🔆 Hey {}, Its Not For You❗"""
 
-    OLD_ALRT_TXT = """🔆 Hᴇʏ {}, ❗Lɪɴᴋ Exᴘɪʀᴇᴅ, Pʟᴇᴀsᴇ Rᴇǫᴜᴇsᴛ Aɢᴀɪɴ ♻"""
+    OLD_ALRT_TXT = """🔆 Hey {}, ❗Link Expired, Please Request Again ♻"""
 
-    CUDNT_FND = """<b><i>⚠ I Tʜɪɴᴋ Yᴏᴜ Sᴘᴇʟʟᴇᴅ Wʀᴏɴɢ, Cʜᴇᴄᴋ Yᴏᴜʀ Sᴘᴇʟʟɪɴɢ Tʜᴇɴ Tʏᴘᴇ Aɢᴀɪɴ \n Oʀ Sᴇʟᴇᴄᴛ Oɴᴇ Oғ Tʜᴇ Bᴇʟᴏᴡ Rᴇsᴜʟᴛs </i></b>"""
+    CUDNT_FND = """<b><i>⚠ No Results, Please Follow Request Tips !!</i></b> \n <b><i>♀ Request Tips › [Click Here](https://t.me/RolexMoviesOX/196)</i></b>"""
 
-    I_CUDNT = """<b><i>⚠ No Results, Please Follow Request Tips !</i></b> \n <b><i>♀ Request Tips › [Click Here](https://t.me/TVSeriesCW/1378)</i></b>"""
+    I_CUDNT = """<b><i>⚠ No Results, Please Follow Request Tips !!</i></b> \n <b><i>♀ Request Tips › [Click Here](https://t.me/RolexMoviesOX/196)</i></b>"""
 
-    I_CUD_NT = """<b><i>⚠ I Tʜɪɴᴋ Yᴏᴜ Sᴘᴇʟʟᴇᴅ Wʀᴏɴɢ, Cʜᴇᴄᴋ Yᴏᴜʀ Sᴘᴇʟʟɪɴɢ Tʜᴇɴ Tʀʏ Aɢᴀɪɴ!! </i></b>"""
+    I_CUD_NT = """<b><i>⚠ No Results, Please Follow Request Tips !!</i></b> \n <b><i>♀ Request Tips › [Click Here](https://t.me/RolexMoviesOX/196)</i></b>"""
 
-    MVE_NT_FND = """<b><i>⚠ No Results, Please Follow Request Tips !!</i></b> \n <b><i>♀ Request Tips › [Click Here](https://t.me/TVSeriesCW/1378)</i></b>"""
+    MVE_NT_FND = """<b><i>⚠ No Results, Please Follow Request Tips !!</i></b> \n <b><i>♀ Request Tips › [Click Here](https://t.me/RolexMoviesOX/196)</i></b>"""
 
-    TOP_ALRT_MSG = """Cʜᴇᴄᴋɪɴɢ Fᴏʀ Mᴏᴠɪᴇ Iɴ 2 Mɪʟʟɪᴏɴ Dᴀᴛᴀʙᴀsᴇ..."""
+    TOP_ALRT_MSG = """Cʜᴇᴄᴋɪɴɢ Fᴏʀ Mᴏᴠɪᴇ Iɴ 1 Million Dᴀᴛᴀʙᴀsᴇ..."""
 
-    MELCOW_ENG = """<b><i>🔆 Hᴇʏ {}, Wᴇʟᴄᴏᴍᴇ Tᴏ {} \n\nYᴏᴜ Cᴀɴ Rᴇǫᴜᴇsᴛ Aɴʏ Mᴏᴠɪᴇs, Wᴇʙ-Sᴇʀɪᴇs, Aɴɪᴍᴇ, K-Dʀᴀᴍᴀ, Aɴɪᴍᴀᴛɪᴏɴ Hᴇʀᴇ....</i></b>"""
+    MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️</b>"""
 
     OWNER_INFO = """
 <b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟
     
-• ꜰᴜʟʟ ɴᴀᴍᴇ : Ɱɾ. φҽɾƒҽçէ
-• ᴜꜱᴇʀɴᴀᴍᴇ : @MrperfectOffcial_bot
-• ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='t.me/MrperfectOffcial_bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>"""
+• ꜰᴜʟʟ ɴᴀᴍᴇ : ᴊᴏɴ sɴᴏᴡ
+• ᴜꜱᴇʀɴᴀᴍᴇ : JonSnow11
+• ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='t.me/JonSnow11'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>"""
 
     REQINFO = """
-Cʜᴇᴄᴋ Yᴏᴜʀ Sᴘᴇʟʟɪɴɢ, Rᴇʟᴇᴀsᴇ Dᴀᴛᴇ, Iғ Yᴏᴜ Sᴛɪʟʟ Dᴏɴ'ᴛ Gᴇᴛ Iᴛ Tᴀɢ @admin
+Check Your Spelling, Release Date, If You Still Don't Get The Movie Then Type Like This...
 ⊱⋅ ──────────────────── ⋅⊰
- Avatar 2009 720p @admin
-
-Oᴡᴇɴʀ Wɪʟʟ Uᴘᴅᴀᴛᴇ Tʜᴇ Mᴏᴠɪᴇ"""
+ #Request Avatar 2009 720p
+ 
+Owner Will Update The Movie Within 24Hour"""
 
     MINFO = """
 ⚠ Hᴏᴡ Tᴏ Rᴇǫᴜᴇsᴛ Mᴏᴠɪᴇs ⁉️ »
 ⊱⋅ ─────────────── ⋅⊰
-› Aᴠᴀᴛᴀʀ ✅
-› Aᴠᴀᴛᴀʀ 2009 720ᴘ ✅
-› Aᴠᴀᴛᴀʀ 2009 720ᴘ Hɪɴᴅɪ ✅
+› Avatar ✅
+› Avatar 2009 720p ✅
+› Avatar 2009 720p Tamil ✅
 
 › Don't Type Movie, Upload, Please, Symbol ❌
 """
@@ -152,8 +150,8 @@ Oᴡᴇɴʀ Wɪʟʟ Uᴘᴅᴀᴛᴇ Tʜᴇ Mᴏᴠɪᴇ"""
 ⚠ How To Request Series ⁉️ »
 ⊱⋅ ─────────────── ⋅⊰
 › Flash S01 ✅
-› Flash Hindi ✅
-› Flash S01E02 Hindi ✅
+› Flash Tamil ✅
+› Flash S01E02 Tamil ✅
 
 › Don't Type Movie, Upload, Please, Symbol ❌
 """
@@ -166,9 +164,9 @@ Oᴡᴇɴʀ Wɪʟʟ Uᴘᴅᴀᴛᴇ Tʜᴇ Mᴏᴠɪᴇ"""
 🔆 <b>Rᴇǫᴜᴇsᴛ</b> : 🎗️`{}`🎗️ """
 
     CAPTION = """
-🎗<b>[{file_name}](https://t.me/+3cfeesNk_cg3MGQ9)</b>🎗 \n\n🔆 <i><b>Mᴏᴠɪᴇs Gʀᴏᴜᴘ » [@HeavenOfMovies࿐•](https://telegram.me/+jARBFU1eMxk1YmY1)</i></b> \n🔆 <b><i>Sᴇʀɪᴇs Gʀᴏᴜᴘ » [@HeavenOfSeries࿐•](https://telegram.me/+6q0f6-TYbA85ZjM1)</b></i>"""
+🎗<b>[{file_name}](https://t.me/RolexMoviesOX)</b>🎗 \n\n🔆 <i><b>Main Channel » [Rolex Movies](https://t.me/RolexMoviesOX)</i></b> \n🔆 <b><i>Main Group » [Movie Group](https://t.me/+ZPpcbtCV204yYWU1)</b></i>"""
 
-    IMDB_TEMPLATE_TXT = """<b><i>🎗️ {title} {year} \n━━━━━━━━━━━━━━ \n🎭 Gᴇɴʀᴇ » {genres} \n⭐Rᴀᴛɪɴɢ » {rating}/10 \n♦️ Sᴛᴏʀʏ » {plot} \n🕹️ Cᴀsᴛ » {cast} \n🧩 Rᴜɴᴛɪᴍᴇ » {runtime} Mɪɴs \n•──────────────• \n🔆彡[ @TVSeriesCW ]彡🔆</b></i>"""
+    IMDB_TEMPLATE_TXT = """<b><i>💫 Title : <a href={url}>{title}</a>  ({year}) 🎭 Genres : {genres} 🌟 IMDB Rating: <a href={url}/ratings>{rating}</a> / 10   📌 [How To Download](https://t.me/RolexMoviesOX/55) </i></b>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
@@ -196,4 +194,6 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 
 📅 Dᴀᴛᴇ : <code>{}</code>
 ⏰Tɪᴍᴇ : <code>{}</code>
-🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code></b>"""
+🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>⏰Tɪᴍᴇ : <code>{}</code>
+
+🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>TamilNadua</code></b>"""
