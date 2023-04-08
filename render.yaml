@@ -1,12 +1,18 @@
 services:
-  drone-srcb:
-    build: .
-    environment:
-      ID: $ID  
-      HASH: $HASH  
-      TOKEN: $TOKEN 
-    ports:
-      - 8080
-    resources:
-      cpu: 1000m
-      memory: 3Gi
+- type: web
+    name: rolex
+    env: Python 3
+    repo: https://github.com/skalight/Test
+    region: oregon # optional (defaults to oregon)
+    branch: rolex # optional (defaults to master)
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3bot.py"
+    envVars:
+      - key: DATABASE_URI
+        fromDatabase:
+          name: Rolex
+          property: connectionString
+      - key: BOT_TOKEN
+        generateValue: true
+      - key: DATABASE_NAME
+        value: 'spree@example.com'
