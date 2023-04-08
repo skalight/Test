@@ -1,8 +1,3 @@
-databases:
-  - name: spree
-    databaseName: spree
-    user: spree
-
 services:
   - type: web
     name: spree
