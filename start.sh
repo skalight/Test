@@ -9,6 +9,6 @@ else
 fi
 cd /RolexTG
 pip3 install -U -r requirements.txt
-pip3 install python-telegram-bot
+pip3 install --upgrade python-telegram-bot
 echo "Bot Assembilng..."
 python3 bot.py
