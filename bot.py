@@ -1,6 +1,7 @@
 #Coded By @JonSnow11
 import logging
 import logging.config
+import telegram
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -95,6 +96,15 @@ class Bot(Client):
                 yield message
                 current += 1
 
+bot = telegram.Bot(token=BOT_TOKEN)
 
+commands = [
+    telegram.BotCommand('start', 'Start the bot'),
+    telegram.BotCommand('help', 'Get help'),
+    telegram.BotCommand('about', 'Get information about the bot'),
+]
+
+bot.set_my_commands(commands)
+                
 app = Bot()
 app.run()
