@@ -1,6 +1,5 @@
 #Code By @JonSnow11
 import logging
-import telegram
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 from info import *
 from imdb import Cinemagoer 
@@ -536,14 +535,4 @@ async def get_verify_shorted_link(link):
         except Exception as e:
             logger.error(e)
             return f'{URL}/api?api={API}&link={link}'
-#-------------------------------
-bot = telegram.Bot(token=BOT_TOKEN)
-
-commands = [
-    telegram.BotCommand('start', 'Start the bot'),
-    telegram.BotCommand('help', 'Get help'),
-    telegram.BotCommand('about', 'Get information about the bot'),
-]
-
-bot.set_my_commands(commands)
 
